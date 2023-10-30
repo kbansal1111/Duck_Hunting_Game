@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+    cursor: url('gunpointerimage2.png'), text;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    width: 100%;
+    display: block;
+    position: fixed;
+    height: 100%;
+    z-index: 1;
+    background: url('background_image.png') repeat-x;
+
+}
+
+
+@keyframes duckfly {
+    0% {
+        left: 150%;
+        top: 10%;
+    }
+
+    10% {
+        left: 100%;
+        top: 50%;
+    }
+
+
+    20% {
+        left: 90%;
+        top: 70%;
+    }
+
+    30% {
+        left: 80%;
+        top: 50%;
+    }
+
+
+    40% {
+        left: 70%;
+        top: 30%;
+    }
+
+    50% {
+        left: 60%;
+        top: 50%;
+    }
+
+    60% {
+        left: 50%;
+        top: 50%;
+    }
+
+
+
+    70% {
+        left: 40%;
+        top: 30%;
+    }
+
+    80% {
+        left: 30%;
+        top: 10%;
+    }
+
+    90% {
+        left: 20%;
+        top: 50%;
+    }
+
+    100% {
+        left: -40%;
+        top: 10%;
+    }
+
+
+
+}
+
+input+label {
+    position: absolute;
+    left: -100px;
+    z-index: 1;
+    width: 80px;
+    height: 80px;
+    display: block;
+    z-index: 5;
+    transform: translate(-50%, -50%) rotateY(180deg);
+    background: url('bird_image_3.png') no-repeat;
+    /* background-position: -138px 0; */
+    background-size: contain;
+
+}
+
+input:checked+label {
+    opacity: 0;
+    transition: 1s;
+    transform: rotate(120deg);
+    transform-origin: 60%;
+    z-index: -5;
+}
+
+.duck:nth-last-of-type(1) {
+    animation: duckfly 20s linear 3s infinite;
+    cursor: url('gunpointerimage2.png'), text;
+}
+
+.duck:nth-last-of-type(2) {
+    animation: duckfly 20s linear 6s infinite;
+    cursor: url('gunpointerimage2.png'), text;
+}
+
+.duck:nth-last-of-type(3) {
+    animation: duckfly 20s linear 9s infinite;
+    cursor: url('gunpointerimage2.png'), text;
+}
+
+.duck:nth-last-of-type(4) {
+    animation: duckfly 20s linear 12s infinite;
+    cursor: url('gunpointerimage2.png'), text;
+}
+
+.duck:nth-last-of-type(5) {
+    animation: duckfly 20s linear 15s infinite;
+    cursor: url('gunpointerimage2.png'), text;
+}
+
+.duck:nth-last-of-type(6) {
+    animation: duckfly 20s linear 18s infinite;
+    cursor: url('gunpointerimage2.png'), text;
+}
+
+.duck:nth-last-of-type(7) {
+    animation: duckfly 20s linear 21s infinite;
+    cursor: url('gunpointerimage2.png'), text;
+}
+
+
+
+
+
+.Score {
+    position: absolute;
+    bottom: 0;
+    height: 90px;
+    line-height: 50px;
+    background-color: #dadada;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    font-size: 40px;
+}
+
+.Score::after {
+    content: counter(Score);
+    display: inline-block;
+}
+
+.Score::before {
+    content: "Score:";
+    display: inline-block;
+    margin: 10px;
+}
+
+input:checked {
+    counter-increment: Score;
+}
